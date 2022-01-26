@@ -1,19 +1,36 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <style>
-    body{
-      background-color: linen;
-    }
-    </style>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.12.0/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 400px;
+        width: 100%;
+        position: static;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.12.0/build/ol.js"></script>
+    <title>OpenLayers example</title>
   </head>
   <body>
-    <h1>건설근로자용</h1>
-    <h2><input type="checkbox">google 지도</h2>
-    <ol>
+      <h2><input type="checkbox">google 지도</h2>
+      <div id="map" class="map"></div>
+    <script type="text/javascript">
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([37.41, 8.82]),
+          zoom: 4
+        })
+      });
+    </script>
+      <ol>
       <li>현장명</li><li>주소</li><li>작업내용</li><li>필요인원</li><li>단가</li><li>식사제공여부</li><li>기타사항</li>
       <li><input type="button" value="지원"></li>
     </ol>
