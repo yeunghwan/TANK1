@@ -2,12 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.12.0/css/ol.css" type="text/css">
     <style>
       .map {
         height: 400px;
         width: 100%;
         position: static;
+      }
+      table {
+         border:1px solid black;
+         border-collapse: collapse;
+         position: static;
+         border-width: thick;
+         width:100%;
+      }
+      td{
+        border:2px solid black;
+        border-width: 30%;
       }
     </style>
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.12.0/build/ol.js"></script>
@@ -30,10 +42,16 @@
         })
       });
     </script>
-      <ol>
-      <li>현장명</li><li>주소</li><li>작업내용</li><li>필요인원</li><li>단가</li><li>식사제공여부</li><li>기타사항</li>
-      <li><input type="button" value="지원"></li>
-    </ol>
+    <table style="100%">
+      <tr><td style="width:30%">현장명</td><td>내용</td></tr>
+      <tr><td>주소</td><td>내용</td></tr>
+      <tr><td>작업내용</td><td>내용</td></tr>
+      <tr><td>필요인원</td><td>내용</td></tr>
+      <tr><td>단가</td><td>내용</td></tr>
+      <tr><td>식사제공여부</td><td>내용</td></tr>
+      <tr><td>기타사항</td><td>내용</td></tr>
+      <tr><td><input type="button"value="지원"></td><td>내용</td></tr>
+    </table>
     <footer><input type="button"value="탱크 톡"></footer>
     <p>본인이 느낀 하루를 마음껏 펼쳐 보세요</p>
     <P>현장에서 보고 느낀 사례를 글 사진, 동영상 등을 우리 커뮤니티에 올려보세요.
