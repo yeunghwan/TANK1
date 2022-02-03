@@ -1,28 +1,102 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <style>
-    div{
-      text-align: center;
-    }
-    body{
-      background-color: #D3D3D3;
-    }
-    </style>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-  </head>
-  <body>
-    <div class="header">
-      <h2><a href="homepage.html"><input type="button" value="홈으로"></a></h2>
-    <div class="header">
-     <h2><input type="button" value="회원가입"></h2>
-     <h2><input type="button" value="건설근로자용"> <input type="button" value="고객용"></h2>
-   </div><br>
-    <h2>당사와 고객간 계약서작성</h2><br><br>
-    <div class="footer">
-      <footer><input type="button" value="가입"></footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TANK©</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-  </body>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>계약서 작성 요령</h2>
+<p></p>
+<header>
+  <h2>계약서작성</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="개인계약..html">개인</a></li>
+      <li><a href="법인계약.html">법인</a></li>
+      <li><a href="공공기관계약.html">공공기관</a></li>
+    </ul>
+  </nav>
+
+  <article>
+    <h1> 계약서 작성순서 </h1>
+    <p></p>
+    <p></p>
+  </article>
+</section>
+
+<footer>
+  <p><a href="homepage.html"><button type="button" value="홈으로">홈으로</button></a></p>
+</footer>
+
+</body>
 </html>
