@@ -1,24 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-  body{
-    background-color: #D3D3D3;
-  }
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #dddd;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;}
+    }
   </style>
-<title>TANK©</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="header">
-    <h2><a href="homepage.html"><input type="button" value="홈으로"></a></h2>
- <h2><a href="법률.html">법률</a></h2>
- <ul>
-   <li>산업안전기본법</li>
-   <li>근로기준법</li>
-   <li>세법</li>
-   <li>노동법</li>
-  </body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>법률</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%82%B0%EC%97%85%EC%95%88%EC%A0%84%EB%B3%B4%EA%B1%B4%EB%B2%95">산업안전기본법</a></li>
+        <li><a href="https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95">근로기준법</a></li>
+        <li><a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6427&cntntsId=7863">세법(근로소득세)</a></li>
+        <li><a href="노동법.html">노동관계법령</a></li>
+      </ul><br>
+      </div>
+
+    <div class="col-sm-9">
+      <hr>
+      <h2>산업안전보건법</h2>
+      <p>이 법은 산업 안전 및 보건에 관한 기준을 확립하고 그 책임의 소재를 명확하게 하여 산업재해를 예방하고 쾌적한 작업환경을 조성함으로써 노무를 제공하는 사람의 안전 및 보건을 유지ㆍ증진함을 목적으로 한다.</p>
+      <br><br>
+      <hr>
+      <h2>근로기준법</h2>
+      <p>이 법은 헌법에 따라 근로조건의 기준을 정함으로써 근로자의 기본적 생활을 보장, 향상시키며 균형 있는 국민경제의 발전을 꾀하는 것을 목적으로 한다.</p>
+      <hr>
+      <hr>
+      <h2>세법(근로소득)</h2>
+      <br>
+      <p>일용근로소득
+
+	특정 고용주에게 계속하여 고용되어 있지 아니하고 일급 또는 시간급 등으로 받는 급여<br>
+	근로를 제공한 날이나 시간에 따라 근로대가를 계산하거나 근로를 제공한 날 또는 시간의 근로성과에 따라 급여를 계산하여 지급받음<br>
+	[일급(비과세소득제외)-15만원] × 6% × [1-55%(근로소득세액공제)]<br>
+	연말정산 대상에 해당되지 아니함 (지급시 원천징수로서 납세의무 종료)<br>
+  지급명세서 제출시기	다음해 3월 10일까지	’21.6.30. 이전 지급분	지급일이 속하는 분기의 마지막 달의 다음 달 말일
+  ’21.7.1. 이후 지급분	지급일이 속하는 달의 다음 달 말일
+  ※ (고용관계 판단) 근로제공자가 업무 내지 작업에 대한 거부를 할 수 있는지, 시간적·장소적인 제약을 받는지, 업무수행과정에 있어서 구체적인 지시를 받는지, 복무규정의 준수의무 등을 종합적으로 판단하여야 함</p>
+      <hr>
+      <hr>
+      <h2>노동관계법령</h2>
+      <br>
+      <p></p>
+      <hr>
+      <h4>Leave a Comment:</h4>
+      <form role="form">
+        <div class="form-group">
+          <textarea class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br><br>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p input type="button"><a href="homepage.html">홈으로</p>
+</footer>
+
+</body>
 </html>
