@@ -1,126 +1,187 @@
 <!DOCTYPE html>
-<html lang="ko"> <!-- 코드언어 표시 == 웹 표준지침 준수 -->
+<html>
 <head>
-<meta charset="UTF-8">
+  <title>TANK©</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TANK© </title>
-<link rel = "icon" href="image/wave.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-@import url("signUpCss3.css");
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* style the container */
+.container {
+  position: relative;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px 0 30px 0;
+}
+
+/* style inputs and link buttons */
+input,
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+input:hover,
+.btn:hover {
+  opacity: 1;
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+.fb {
+  background-color: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
+
+/* style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Two-column layout */
+.col {
+  float: left;
+  width: 50%;
+  margin: auto;
+  padding: 0 50px;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* vertical line */
+.vl {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border: 2px solid #ddd;
+  height: 175px;
+}
+
+/* text inside the vertical line */
+.vl-innertext {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 8px 10px;
+}
+
+/* hide some text on medium and large screens */
+.hide-md-lg {
+  display: none;
+}
+
+/* bottom container */
+.bottom-container {
+  text-align: center;
+  background-color: #666;
+  border-radius: 0px 0px 4px 4px;
+}
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+  .col {
+    width: 100%;
+    margin-top: 0;
+  }
+  /* hide the vertical line */
+  .vl {
+    display: none;
+  }
+  /* show the hidden text on small screens */
+  .hide-md-lg {
+    display: block;
+    text-align: center;
+  }
+}
 </style>
-<!-- 자바스크립트(유효성검사 해당) -->
-<script src ="signUpjs3.js"></script>
-<!-- 다음 우편번호찾기 API -->
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body>
-  <div class="header">
-    <h2><a href="homepage.html"><input type="button" value="홈으로"></a></h2>
-<div id="wrap" class="wrapper">
-      <form method ="post" name="join" id="join">
-        <!-- 회원가입 타이틀부분 -->
-         <header>
-            <div id="header">
-               <h1 class="h_loho">
-                  <p>TANK©가족이 되어주세요!</p>
-               </h1>
-               </div>
-         </header>
+  <h2 style="text-align: center">가족으로 모시고 싶습니다.</h2>
+  <p><strong>TANK©</strong>의 바다에서 일자리라는 배를 타고 마음껏 인생의 항해를 해보지 않으시렵니까?</p>
+  <p>가족의 일원으로 가장의 마음으로 일자리라는 배를 운행하고자 합니다. </p>
+<div class="container">
+  <form action="/action_page.php">
+    <div class="row">
+      <h2 style="text-align:center"></h2>
+      <div class="vl">
+        <span class="vl-innertext">or</span>
+      </div>
 
-         <div id="container">
-            <div class="row_group">
-               <div class="userInput">
-        <!-- 아이디 입력 -->
-                  <h3 class="list">아이디<span id="idError"></span></h3>
-<span class="box int_id" ><input type="text" id="id" class="int check"
-                     maxlength="20"></span>
-               </div>
-               <div class="userInput">
-        <!-- 비밀번호 입력 -->
-                  <h3 class="list">비밀번호<span id="pwError"></span></h3>
-                  <span class="box int_id"><input type="password" id="pw" class="int check"
-                     maxlength="20"></span>
-               </div>
-        <!-- 비밀번호 재확인 입력 -->
-               <div class="userInput">
-                  <h3 class="list">비밀번호 재확인<span id="pwCheckError"></span></h3>
-                  <span class="box int_id"><input type="password" id="pwCheck" class="int check"
-                     maxlength="20"></span>
-               </div>
-            </div>
-               <div class="row_group">
-        <!-- 성명 입력 -->
-               <div class="userInput">
-                  <h3 class="list">성명<span id="nameError"></span></h3>
-                  <span class="box int_id"><input type="text" id="name" class="int check"
-maxlength="20"></span>
-              </div>
-       <!-- 전화번호 입력 -->
-              <div class="userInput">
-                 <h3 class="list">전화번호("-" 제외)<span id="phoneNumError"></span></h3>
-                 <span class="box int_id"><input type="text" id="phoneNum" class="int check"
-                    maxlength="11"></span>
-              </div>
-       <!-- 주소 입력 -->
-              <div class="userInput">
-                 <h3 class="list">
-                    자택주소<span id="addressError"></span>
-                 </h3>
-                 <div id="address" class="int_id">
-                 <span>
-                 <input type="text" id="sample4_postcode" class="d_form mini line addressCheck" placeholder="우편번호" readonly>
-                 <input type="button" id="addressButton" class="d_form mini" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" readonly>
-                 </span>
-                 <input type="text" id="sample4_roadAddress" class="d_form mini line" placeholder="도로명주소" readonly>
-                 <input type="text" id="sample4_jibunAddress" class="d_form mini line" placeholder="지번주소" readonly>
-                 <span id="guide" style="color:#999;display:none"></span>
-<input type="text" id="sample4_extraAddress" class="d_form mini line" placeholder="참고주소" readonly>
-                  <input type="text" id="sample4_detailAddress" class="d_form mini line addressCheck" placeholder="상세주소" >
-                  </div>
-               </div>
-<!-- 이메일 입력 -->
-              <div class="userInput">
-                  <h3 class="list">이메일<span id="emailError"></span></h3>
-                  <span class="emailInt" id="emailBox"> <input type="text" id="email" maxlength="20" class="check" >
-                     <span>   @ </span>
-                        <!-- 이메일 택일 -->
-                        <select id="mail_Select">
-                           <option>이메일 선택</option>
-                           <option>naver.com</option>
-                           <option>gmail.com</option>
-                           <option>daum.net</option>
-                           <option>hanmail.net</option>
-                           <option>hotmail.com</option>
-                           <option>nate.com</option>
-                           <option>yahoo.co.kr</option>
-                           <option>empas.com</option>
-                           <option>freechal.com</option>
-                           <option>lycos.co.kr</option>
-<option>korea.com</option>
-                           <option>hanmir.com</option>
-                           <option>dreamwiz.com</option>
-                           <option>paran.com</option>
-                        </select>
-                  </span>
-               </div>
-       <!-- 개인정보 수집 동의 -->
-                  <div class="userInput">
-                  <h3 class="list">개인정보 수집/이용동의<span id="consentError"></span></h3>
-                  <div id="informationConsent">
-                  <span id="consentBox">
-                      <h3>개인정보 처리방침<span id="consentError"></span></h3>
-                      <!-- 세부내용 중략 -->
-                  </span>
-               </div>
-               <label class="select"><input type="radio" id="check" name="check" value="동의">동의</label>
-               <label class="select"><input type="radio" id="noneCheck"name="check" value="비동의" checked="checked">비동의</label>
-               </div>
-               <div class="btn_area">
-                  <input type="submit" value="가입하기" id="btnJoin" class="btn_type btn_primary">
-               </div>
-            </div>
-         </div>
-      </form>
-   </div>
+      <div class="col">
+           <a href="#" class="fb btn">
+          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+         </a>
+        <a href="#" class="twitter btn">
+          <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+        </a>
+        <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+          </i> Login with Google+
+        </a>
+      </div>
+
+      <div class="col">
+        <div class="hide-md-lg">
+          <p>혹은 직접기입하세요!</p>
+        </div>
+
+        <input type="text" name="username" placeholder="이름" required>
+        <input type="password" name="password" placeholder="비밀번호" required>
+        <input type="submit" value="Login">
+      </div>
+
+    </div>
+  </form>
+</div>
+
+<div class="bottom-container">
+  <div class="row">
+    <div class="col">
+      <a href="#" style="color:white" class="btn">가입하기</a>
+    </div>
+    <div class="col">
+      <a href="#" style="color:white" class="btn">비밀번호를 잊으셨나요?</a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

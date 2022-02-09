@@ -6,16 +6,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.12.0/css/ol.css" type="text/css">
     <style>
       .map {
-        height: 400px;
+        height: 300px;
         width: 100%;
-        position: static;
+        position: relative;
       }
       table {
-         border:1px solid black;
+         border:1px solid gray;
          border-collapse: collapse;
          position: static;
-         border-width: thick;
+         border-width: thin;
          width:100%;
+         text-align: center;
       }
       td{
         border:2px solid black;
@@ -31,7 +32,7 @@
   <body>
     <div class="header">
       <h2><a href="homepage.html"><input type="button" value="홈으로"></a></h2>
-      <h2><input type="checkbox">google 지도</h2>
+      <h2><input type="checkbox">OpenStreetMap</h2>
       <div id="map" class="map"></div>
     <script type="text/javascript">
       var map = new ol.Map({
