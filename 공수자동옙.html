@@ -425,7 +425,6 @@ input.add-event-edit:-ms-input-placeholder {
 
 </style>
 </head>
-
 <body>
   <div class="calendar" id="calendar-app">
   <div class="calendar--day-view" id="day-view">
@@ -433,34 +432,33 @@ input.add-event-edit:-ms-input-placeholder {
     <span class="day-view-date" id="day-view-date">MAY 29 2016</span>
     <div class="day-view-content">
       <div class="day-highlight">
-        You <span class="day-events" id="day-events">had no events for today</span>. &nbsp; <span tabindex="0" onkeyup="if(event.keyCode != 13) return; this.click();" class="day-events-link" id="add-event" data-date>Add a new event?</span>
+       <span class="day-events" id="day-events"></span><span tabindex="0" onkeyup="if(event.keyCode != 13) return; this.click();" class="day-events-link" id="add-event" data-date>오늘 한일을 기록에 남기세요</span>
       </div>
       <div class="day-add-event" id="add-day-event-box" data-active="false">
         <div class="row">
           <div class="half">
             <label class="add-event-label">
-               Name of event
-              <input type="text" class="add-event-edit add-event-edit--long" placeholder="New event" id="input-add-event-name">
-
+              한일 기록
+              <input type="text" class="add-event-edit add-event-edit--long" placeholder="적어주세요!" id="input-add-event-name">
             </label>
-          </div>
-          <div class="qtr">
-            <label class="add-event-label">
-          Start Time
-              <input type="text" class="add-event-edit" placeholder="8:15" id="input-add-event-start-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
-              <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-start-ampm" data-options="a,p,am,pm">
-            </label>
-          </div>
-          <div class="qtr">
-            <label class="add-event-label">
-          End Time
-              <input type="text" class="add-event-edit" placeholder="9" id="input-add-event-end-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
-              <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-end-ampm" data-options="a,p,am,pm">
-            </label>
-          </div>
-          <div class="half">
-            <a onkeyup="if(event.keyCode != 13) return; this.click();" tabindex="0" id="add-event-save" class="event-btn--save event-btn">save</a>
-            <a tabindex="0" id="add-event-cancel" class="event-btn--cancel event-btn">cancel</a>
+            </div>
+            <div class="qtr">
+           <label class="add-event-label">
+         Start Time
+             <input type="text" class="add-event-edit" placeholder="8:15" id="input-add-event-start-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
+             <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-start-ampm" data-options="a,p,am,pm">
+           </label>
+         </div>
+         <div class="qtr">
+           <label class="add-event-label">
+         End Time
+             <input type="text" class="add-event-edit" placeholder="9" id="input-add-event-end-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
+             <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-end-ampm" data-options="a,p,am,pm">
+           </label>
+         </div>
+        <div class="half">
+            <a onkeyup="if(event.keyCode != 13) return; this.click();" tabindex="0" id="add-event-save" class="event-btn--save event-btn">저장</a>
+            <a tabindex="0" id="add-event-cancel" class="event-btn--cancel event-btn">취소</a>
           </div>
         </div>
 
@@ -475,9 +473,9 @@ input.add-event-edit:-ms-input-placeholder {
   </div>
   <div class="calendar--view" id="calendar-view">
     <div class="cview__month">
-      <span class="cview__month-last" id="calendar-month-last">Apr</span>
-      <span class="cview__month-current" id="calendar-month">May</span>
-      <span class="cview__month-next" id="calendar-month-next">Jun</span>
+      <span class="cview__month-last" id="calendar-month-last">4월</span>
+      <span class="cview__month-current" id="calendar-month">5월</span>
+      <span class="cview__month-next" id="calendar-month-next">6월</span>
     </div>
     <div class="cview__header">일</div>
     <div class="cview__header">월</div>
@@ -490,7 +488,8 @@ input.add-event-edit:-ms-input-placeholder {
     </div>
   </div>
   <div class="footer">
-    <span><span id="footer-date" class="footer__link">Today is May 30</span></span>
+    <span id="footer-date" class="footer__link">Today is May 30</span>
+    <p>flex의 온라인자동급여명세표 사용 예정</p>
   </div>
 </div>
 
@@ -502,8 +501,8 @@ input.add-event-edit:-ms-input-placeholder {
   }
 
   this.days = ['일', '월', '화', '수', '목', '금', '토'];
-  this.months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  this.quotes = ['Whatever the mind of man can conceive and believe, it can achieve. –Napoleon Hill', 'Strive not to be a success, but rather to be of value. –Albert Einstein', 'Two roads diverged in a wood, and I—I took the one less traveled by, And that has made all the difference.  –Robert Frost', 'I attribute my success to this: I never gave or took any excuse. –Florence Nightingale', 'You miss 100% of the shots you don’t take. –Wayne Gretzky', 'The most difficult thing is the decision to act, the rest is merely tenacity. –Amelia Earhart', 'Every strike brings me closer to the next home run. –Babe Ruth', 'Definiteness of purpose is the starting point of all achievement. –W. Clement Stone', 'Life isn’t about getting and having, it’s about giving and being. –Kevin Kruse', 'Life is what happens to you while you’re busy making other plans. –John Lennon', 'We become what we think about. –Earl Nightingale', 'Life is 10% what happens to me and 90% of how I react to it. –Charles Swindoll', 'The most common way people give up their power is by thinking they don’t have any. –Alice Walker', 'The mind is everything. What you think you become.  –Buddha', 'Winning isn’t everything, but wanting to win is. –Vince Lombardi', 'Every child is an artist.  The problem is how to remain an artist once he grows up. –Pablo Picasso', ' You can never cross the ocean until you have the courage to lose sight of the shore. –Christopher Columbus', 'I’ve learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel. –Maya Angelou', 'Either you run the day, or the day runs you. –Jim Rohn', 'Whether you think you can or you think you can’t, you’re right. –Henry Ford', 'The two most important days in your life are the day you are born and the day you find out why. –Mark Twain', 'Whatever you can do, or dream you can, begin it.  Boldness has genius, power and magic in it. –Johann Wolfgang von Goethe', 'The best revenge is massive success. –Frank Sinatra', 'People often say that motivation doesn’t last. Well, neither does bathing.  That’s why we recommend it daily. –Zig Ziglar', 'Life shrinks or expands in proportion to one’s courage. –Anais Nin', 'If you hear a voice within you say “you cannot paint,” then by all means paint and that voice will be silenced. –Vincent Van Gogh', 'There is only one way to avoid criticism: do nothing, say nothing, and be nothing. –Aristotle', 'Ask and it will be given to you; search, and you will find; knock and the door will be opened for you. –Jesus', 'The only person you are destined to become is the person you decide to be. –Ralph Waldo Emerson', 'Go confidently in the direction of your dreams.  Live the life you have imagined. –Henry David Thoreau',  'Few things can help an individual more than to place responsibility on him, and to let him know that you trust him.  –Booker T. Washington'];
+  this.months = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+  this.quotes = ['여러분 환영합니다. 열심히 일하는 당신 항상 응원할께요!'];
   this.apts = [
     {
       name: 'Finish this web app',
@@ -551,7 +550,7 @@ input.add-event-edit:-ms-input-placeholder {
     endTime:  document.getElementById("input-add-event-end-time"),
     startAMPM:  document.getElementById("input-add-event-start-ampm"),
     endAMPM:  document.getElementById("input-add-event-end-ampm")
-  };
+    };
   this.dayEventsList = document.getElementById("day-events-list");
   this.dayEventBoxEle = document.getElementById("add-day-event-box");
 

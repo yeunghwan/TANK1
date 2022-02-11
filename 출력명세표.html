@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-  <style>
-    body{
-      background-color: #D3D3D3;
-    }
-    table {
-       text-align: center;
-       border:1px solid black;
-       border-collapse: collapse;
-       position: static;
-       width:60%;
-    }
-    table.center {
-       margin-left: auto;
-       margin-right: auto;
-    }
-    th,td{
-      border:1px solid black;
-        }
-    h2{text-align: center;}
-    div{
-      text-align: left;
-    }
-    </style>
-  </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>TANK©</title>
+    <style>
+      body{
+        background-color: #D3D3D3;
+      }
+      table {
+         text-align: center;
+         border:1px solid black;
+         border-collapse: collapse;
+         position: static;
+         width:80%;
+      }
+      table.center {
+         margin-left: auto;
+         margin-right: auto;
+      }
+      th,td{
+        border:1px solid black;
+          }
+      h2,h3,h6,h4,p{text-align: center;}
+      div{
+        text-align: left;
+      }
+      /* On small screens, set height to 'auto' for sidenav and grid */
+      @media screen and (max-width: 767px) {
+        .sidenav {
+          height: auto;
+          padding: 15px;
+        }
+        .row.content {height:auto;}
+      }
+    </style>
   </head>
   <body>
     <div class="header">
-      <h2><a href="homepage.html"><input type="button" value="홈으로"></a></h2></div>
-    <h2>출력명세표</h2>
-    <h4><button type="button" >현장명 :  project명</button></h4>
+      <h6><a href="homepage.html"><input type="button" value="홈으로"></a></h6></div>
+    <h2>출력명세표</h2><br>
+    <h4><button type="button" >현장명 :  project명</button></h4><br>
     <table class="center">
       <caption style="caption-side:bottom">
-        <h4>상기 근로자가 당현장에서 출력하였슴을 확인함</h4>
+        <br><h3>상기 근로자가 당현장에서 출력하였슴을 확인함</h3>
         <p>날 짜 : 2022년 &nbsp; &nbsp;&nbsp;월 &nbsp;&nbsp;&nbsp;일</p>
         <h4><button type="button"value="제출">제출 </button></h4>
       </caption>
-    <tr><td width="10%">번호</td><td>이름</td><td>금액(원)</td><td>공수</td><td>세금</td><td>수수료</td><td>지불금액</td><td>비고</td></tr>
+    <tr><td width="5%">번호</td><td>이름</td><td>금액(원)</td><td>공수</td><td>세금</td><td>수수료</td><td>지불금액</td><td>비고</td></tr>
     <tr><td>1</td><td>홍길동</td><td>150000</td><td>1</td><td>4대보험</td><td>10%</td><td>130000</td><td>알선회사원천징수</td></tr>
     <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
     <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
