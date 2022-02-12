@@ -1,25 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-  body{
-    background-color: #D3D3D3;
-  }
-  </style>
 <title>TANK©</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+  /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+  .row.content {height: 1500px}
+
+  /* Set gray background color and 100% height */
+  .sidenav {
+    background-color: #D3D3D3;
+    height: 100%;
+  }
+
+  /* Set black background color, white text and some padding */
+  footer {
+    background-color: #dddd;
+    color: white;
+    padding: 15px;
+  }
+
+  /* On small screens, set height to 'auto' for sidenav and grid */
+  @media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height: auto;}
+  }
+</style>
 </head>
 <body>
-  <div class="header">
-    <h2><a href="homepage.html"><input type="button" value="홈으로"></a></h2>
- <h2><a href="파트너쉽.html">파트너쉽</a></h2>
- <ul>
-   <li><a href="은행.html">은행</a></li>
-   <li><a href="공구대여.html">공구대여</a></li>
-   <li><a href="건설회사.html">건설회사</a></li>
-   <li><a href="투자자.html">투자자</a></li>
- </ul>
+  <body>
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-3 sidenav">
+        <h4>파트너쉽</h4>
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="은행.html">금융기관</a></li>
+          <li><a href="공구대여.html">공구대여</a></li>
+          <li><a href="건설회사.html">건설회사</a></li>
+          <li><a href="투자자.html">투자자</a></li>
+        </ul><br>
+        </div>
+
+      <div class="col-sm-9">
+        <hr>
+        <h2>금융기관</h2>
+        <p></p>
+        <br><br>
+        <hr>
+        <h2>공구대여</h2>
+        <p></p>
+        <hr>
+        <hr>
+        <h2>건설회사</h2>
+        <br>
+        <p></p>
+        <hr>
+        <h2>투자자</h2>
+        <br>
+        <p></p>
+        <hr>
+      </div>
+    </div>
+  </div>
+  <footer class="container-fluid">
+    <p input type="button"><a href="homepage.html">홈으로</p>
+  </footer>
   </body>
 </html>
