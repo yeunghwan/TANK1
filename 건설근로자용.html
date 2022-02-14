@@ -1,188 +1,165 @@
 <!DOCTYPE html>
 <html>
-<head>
 <title>TANK©</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
 
-* {
-  box-sizing: border-box;
-}
-
-/* style the container */
-.container {
-  position: relative;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px 0 30px 0;
-}
-
-/* style inputs and link buttons */
-input,
-.btn {
+/* Full-width input fields */
+input[type=text], input[type=password] {
   width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 4px;
-  margin: 5px 0;
-  opacity: 0.85;
+  padding: 15px;
+  margin: 5px 0 22px 0;
   display: inline-block;
-  font-size: 17px;
-  line-height: 20px;
-  text-decoration: none; /* remove underline from anchors */
+  border: none;
+  background: #f1f1f1;
 }
 
-input:hover,
-.btn:hover {
-  opacity: 1;
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
 }
 
-/* add appropriate colors to fb, twitter and google buttons */
-.fb {
-  background-color: #3B5998;
+/* Set a style for all buttons */
+button {
+  background-color:black;
   color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
 }
 
-.twitter {
-  background-color: #55ACEE;
-  color: white;
+button:hover {
+  opacity:1;
 }
 
-.google {
-  background-color: #dd4b39;
-  color: white;
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
 }
 
-/* style the submit button */
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
   cursor: pointer;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-/* Two-column layout */
-.col {
-  float: left;
-  width: 50%;
-  margin: auto;
-  padding: 0 50px;
-  margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
+/* Clear floats */
+.clearfix::after {
   content: "";
-  display: table;
   clear: both;
+  display: table;
 }
 
-/* vertical line */
-.vl {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  border: 2px solid #ddd;
-  height: 175px;
-}
-
-/* text inside the vertical line */
-.vl-innertext {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  padding: 8px 10px;
-}
-
-/* hide some text on medium and large screens */
-.hide-md-lg {
-  display: none;
-}
-
-/* bottom container */
-.bottom-container {
-  text-align: center;
-  background-color: #666;
-  border-radius: 0px 0px 4px 4px;
-}
-
-/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 650px) {
-  .col {
-    width: 100%;
-    margin-top: 0;
-  }
-  /* hide the vertical line */
-  .vl {
-    display: none;
-  }
-  /* show the hidden text on small screens */
-  .hide-md-lg {
-    display: block;
-    text-align: center;
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
   }
 }
 </style>
-</head>
 <body>
-  <h2 style="text-align: center">가족으로 모시고 싶습니다.</h2>
-  <p><strong>TANK©</strong>의 바다에서 일자리라는 배를 타고 마음껏 인생의 항해를 해보지 않으시렵니까?</p>
-  <p>가족의 일원으로 가장의 마음으로 일자리라는 배를 운행하고자 합니다. </p>
-<div class="container">
-  <form action="/action_page.php">
-    <div class="row">
-      <h2 style="text-align:center"></h2>
-      <div class="vl">
-        <span class="vl-innertext">or</span>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">회원가입</button>
+
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>회원가입</h1>
+      <p>이 양식에 내용을 채워주세요.</p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>비밀번호</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw-repeat"><b>비밀번호확인</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> 나를 기억해줘
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">취소</button>
+        <button type="submit" class="signupbtn">가입하기</button>
       </div>
-
-      <div class="col">
-           <a href="#" class="fb btn">
-          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
-         </a>
-        <a href="#" class="twitter btn">
-          <i class="fa fa-twitter fa-fw"></i> Login with Twitter
-        </a>
-        <a href="#" class="google btn"><i class="fa fa-google fa-fw">
-          </i> Login with Google+
-        </a>
-      </div>
-
-      <div class="col">
-        <div class="hide-md-lg">
-          <p>혹은 직접기입하세요!</p>
-        </div>
-
-        <input type="text" name="username" placeholder="이름" required>
-        <input type="password" name="password" placeholder="비밀번호" required>
-        <input type="submit" value="Login">
-      </div>
-
     </div>
   </form>
 </div>
 
-<div class="bottom-container">
-  <div class="row">
-    <div class="col">
-      <a href="#" style="color:white" class="btn">가입하기</a>
-    </div>
-    <div class="col">
-      <a href="#" style="color:white" class="btn">비밀번호를 잊으셨나요?</a>
-    </div>
-  </div>
-</div>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
 </body>
 </html>
