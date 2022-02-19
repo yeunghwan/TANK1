@@ -2,21 +2,42 @@
 <html>
 <head>
   <style>
+  .container {
+    padding: 80px 120px;
+  }
+
+  .carousel-inner img {
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%); /* make all photos black and white */
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+  }
+  .carousel-caption h3 {
+    color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
   img{
     float: left;
   }
   body{
     background-color:#D3D3D3;
-      }
-  </style>
+    padding-left: 20px;
+    }
+    </style>
 <title>TANK©</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
   <div class="header">
-    <h2><a href="homepage.html"><input type="button" value="홈으로"></a></h2>
+    <h6><a href="homepage.html"><input type="button" value="홈으로"></a></h6></div>
  <h2><a href="우리에대하여.html">우리에대하여</a></h2>
 
   <h2>창업동기</h2>
@@ -41,15 +62,74 @@
        <p>2.구시대적 관행 만연</p>
        <p>3.인력을 바라보는 사용자의 관점 정체</p>
        <p>4.건축비 상승에 따른 인건비 상승속도 미비</p>
-      <h2>조직망</h2>
-       <img src="조직망.jpg">
-       <h2>사업소개</h2>
-       <img src="사업소개1.jpg">
-        <img src="사업소개2.jpg">
-       <h2>시장현황</h2>
-        <img src="시장현황1.jpg">
-        <h2>사업분석및계획</h2>
-         <img src="시장현황2.jpg">
-          <img src="시장현황3.jpg">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#조직망" data-slide-to="0" class="active"></li>
+                <li data-target="#사업소개1" data-slide-to="1"></li>
+                <li data-target="#사업소개2" data-slide-to="2"></li>
+                <li data-target="#시장현황1" data-slide-to="3"></li>
+                <li data-target="#시장현황2" data-slide-to="4"></li>
+                <li data-target="#시장현황3" data-slide-to="5"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <img src="조직망.jpg" alt="New York" width="1200" height="700">
+                  <div class="carousel-caption">
+                    <h3>New York</h3>
+                    <p>The atmosphere in New York is lorem ipsum.</p>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <img src="사업소개1.jpg" alt="Chicago" width="1200" height="700">
+                  <div class="carousel-caption">
+                    <h3>Chicago</h3>
+                    <p>Thank you, Chicago - A night we won't forget.</p>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <img src="사업소개2.jpg" alt="Los Angeles" width="1200" height="700">
+                  <div class="carousel-caption">
+                    <h3>LA</h3>
+                    <p>Even though the traffic was a mess, we had the best time playing at Venice Beach!</p>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="시장현황1.jpg" alt="Chicago" width="1200" height="700">
+                  <div class="carousel-caption">
+                    <h3>Chicago</h3>
+                    <p>Thank you, Chicago - A night we won't forget.</p>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="시장현황2.jpg" alt="Chicago" width="1200" height="700">
+                  <div class="carousel-caption">
+                    <h3>Chicago</h3>
+                    <p>Thank you, Chicago - A night we won't forget.</p>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="시장현황3.jpg" alt="Chicago" width="1200" height="700">
+                  <div class="carousel-caption">
+                    <h3>Chicago</h3>
+                    <p>Thank you, Chicago - A night we won't forget.</p>
+                  </div>
+                </div>
+          </div>
+
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+      </div>
   </body>
 </html>
