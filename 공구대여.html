@@ -1,25 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-  body{
-    background-color: #D3D3D3;
-  }
-  </style>
 <title>TANK©</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+  /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+  .row.content {height: 1500px}
+
+  /* Set gray background color and 100% height */
+  .sidenav {
+    background-color: #D3D3D3;
+    height: 100%;
+  }
+
+
+
+
+  /* On small screens, set height to 'auto' for sidenav and grid */
+  @media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height: auto;}
+  }
+</style>
 </head>
 <body>
-  <div class="header">
-    <h2><a href="homepage.html"><input type="button" value="홈으로"></a></h2>
- <h2>공구대여</h2>
- <ul>
-   <li>A공구</li>
-   <li>B공구</li>
-   <li>C공구</li>
-   <li>D공구</li>
- </ul>
+  <body>
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-3 sidenav">
+        <h5><a href="homepage.html"><input type="button" value="홈으로"></a></h5>
+          <ul class="nav nav-pills nav-stacked">
+          <li><a href="#">A공구</a></li>
+          <li><a href="#">B공구</a></li>
+          <li><a href="#">C공구</a></li>
+          <li><a href="#">D공구</a></li>
+        </ul><br>
+        </div>
+
+      <div class="col-sm-9">
+        <hr>
+        <h2>공구종류</h2>
+        <p></p>
+        <br><br>
+        <hr>
+        <h2>공구가격</h2>
+        <p></p>
+        <br><br>
+        <hr>
+        <h2>대여가격</h2>
+        <br><br>
+        <p></p>
+        <hr>
+        <h2>대여회사</h2>
+        <br><br>
+        <p></p>
+        <hr>
+      </div>
+    </div>
+  </div>
+
   </body>
 </html>
