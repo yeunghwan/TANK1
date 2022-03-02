@@ -22,7 +22,6 @@
       }
       td{
         border:2px solid black;
-        border-width: 30%;
       }
       p,h2{
         text-align: center;
@@ -38,8 +37,7 @@
   <body>
     <div class="header">
       <h2><a href="homepage.html"><input type="button" value="홈으로"></a></h2>
-      <h2><input type="button" value="현장찾기"></h2>
-      <div id="map" class="map"></div>
+    <div id="map" class="map"></div>
     <script type="text/javascript">
       var map = new ol.Map({
         target: 'map',
@@ -49,9 +47,9 @@
           })
         ],
         view: new ol.View({
-          center: ol.proj.fromLonLat([37.41, 8.82]),
-          zoom: 2
-        })
+          center: ol.proj.fromLonLat([127.25, 38.80]),
+          zoom: 6
+                })
       });
     </script>
     <br>
