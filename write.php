@@ -13,7 +13,7 @@ $result = mysqli_query($conn, "SELECT * FROM topic");
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>석백산</title>
+      <title>석백산</title>
   </head>
 <body id="target">
 <div class="container">

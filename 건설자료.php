@@ -28,7 +28,7 @@ $result = mysqli_query($conn, "SELECT * FROM topic");
             <ol class="nav nav-pills nav-stacked">
             <?php
             while( $row = mysqli_fetch_assoc($result)){
-              echo '<li><a href="건설자료".php?id='.$row['id'].'">'.htmlspecialchars($row['title']).'</a></li>'."\n";
+              echo '<li><a href="건설자료.php?id='.$row['id'].'">'.htmlspecialchars($row['title']).'</a></li>'."\n";
             }
             ?>
             </ ol>
