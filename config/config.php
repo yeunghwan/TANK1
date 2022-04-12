@@ -1,6 +1,6 @@
 <?php
 $config=array(
-  "host"=>"localhost",
+  "host"=>@"localhost",
   "duser"=>"root",
   "dpw"=>"111111",
   "dname"=>"opentutorials"
